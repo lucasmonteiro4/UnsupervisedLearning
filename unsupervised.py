@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA, SparsePCA, KernelPCA
 from sklearn.cluster import KMeans, SpectralClustering, DBSCAN, AffinityPropagation
 from kneed import KneeLocator
 
-crime = pd.read_csv('/home/lucas04/Documents/Projets/spotify/crime.csv')
+crime = pd.read_csv('crime.csv')
 
 crime.head()
 features = crime.drop('State', 1)
@@ -26,7 +26,7 @@ scaler = StandardScaler()
 dfnorm = pd.DataFrame(scaler.fit_transform(features), columns=features.columns, index=features.index)
 dfnorm.head()
 
-# we will considered 3 ways to dimensional reduction : PCA and KernelPCA(nonlinear)
+# we will considered 2 ways to dimensional reduction : PCA and KernelPCA(nonlinear)
 
 #PCA
 
